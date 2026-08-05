@@ -1,4 +1,6 @@
+bureaucracy
 a.out
+obj/
 *.pdf
 
 .vscode/

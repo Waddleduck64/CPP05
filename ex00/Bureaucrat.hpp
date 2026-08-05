@@ -4,6 +4,7 @@
 # include <string>
 # include <string_view>
 # include <iostream>
+# include <exception>
 
 class Bureaucrat
 {
@@ -20,6 +21,18 @@ class Bureaucrat
 
 	std::string const &	getName() const;
 	size_t				getGrade() const;
+
+	class GradeTooHighException : public std::runtime_error
+	{
+		public:
+			GradeTooHighException() : std::runtime_error("The grade cannot be this high.") {}
+	};
+
+	class GradeTooLowException : public std::runtime_error
+	{
+		public:
+			GradeTooLowException() : std::runtime_error("The grade cannot be this low.") {}
+	};
 
 	protected:
 	Bureaucrat();

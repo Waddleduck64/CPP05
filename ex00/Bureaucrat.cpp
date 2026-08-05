@@ -3,10 +3,10 @@
 
 Bureaucrat::Bureaucrat(std::string_view name, size_t grade): _name(name), _grade(grade)
 {
-	if (grade < 1 || grade > 150)
-	{
-		//exception?????? //either a Bureaucrat::GradeTooHighException or a Bureaucrat::GradeTooLowException
-	}
+	if (grade < 1)
+		throw GradeTooHighException();
+	if (grade > 150)
+		throw GradeTooLowException();
 }
 
 Bureaucrat::Bureaucrat(Bureaucrat const & original): _name(original._name), _grade(original._grade)
@@ -27,18 +27,14 @@ Bureaucrat& Bureaucrat::operator=(Bureaucrat const & original)
 void	Bureaucrat::incGrade()
 {
 	if (_grade <= 1)
-	{
-		//exception??????
-	}
+		throw GradeTooHighException();
 	_grade--;
 }
 
 void	Bureaucrat::decGrade()
 {
 	if (_grade >= 150)
-	{
-		//exception??????
-	}
+		throw GradeTooLowException();
 	_grade++;
 }
 
