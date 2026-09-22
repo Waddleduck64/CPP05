@@ -27,13 +27,13 @@ class Form
 	class GradeTooHighException : public std::runtime_error
 	{
 		public:
-			GradeTooHighException() : std::runtime_error("The grade cannot be this high.") {}
+			GradeTooHighException() : std::runtime_error("This grade is too high.") {}
 	};
 
 	class GradeTooLowException : public std::runtime_error
 	{
 		public:
-			GradeTooLowException() : std::runtime_error("The grade cannot be this low.") {}
+			GradeTooLowException() : std::runtime_error("This grade is too low.") {}
 	};
 
 	private:
