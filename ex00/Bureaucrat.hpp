@@ -1,10 +1,10 @@
 #ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
 
+# include <iostream>
+# include <stdexcept>
 # include <string>
 # include <string_view>
-# include <iostream>
-# include <exception>
 
 class Bureaucrat
 {
