@@ -17,7 +17,7 @@ class Form
 
 	Form& operator=(Form const & original);
 
-	void	beSigned(Bureaucrat bureaucrat);
+	void	beSigned(Bureaucrat const & bureaucrat);
 
 	std::string const &	getName() const;
 	bool				isSigned() const;

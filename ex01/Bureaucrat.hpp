@@ -5,6 +5,7 @@
 # include <stdexcept>
 # include <string>
 # include <string_view>
+class Form;
 
 class Bureaucrat
 {
@@ -18,6 +19,8 @@ class Bureaucrat
 
 	void	incGrade();
 	void	decGrade();
+
+	void	signForm(Form & form) const;
 
 	std::string const &	getName() const;
 	size_t				getGrade() const;
