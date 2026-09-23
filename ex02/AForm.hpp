@@ -1,5 +1,5 @@
-#ifndef FORM_HPP
-# define FORM_HPP
+#ifndef AFORM_HPP
+# define AFORM_HPP
 
 # include "Bureaucrat.hpp"
 # include <iostream>
@@ -7,17 +7,18 @@
 # include <string>
 # include <string_view>
 
-class Form
+class AForm
 {
 	public:
-	Form(std::string_view name, size_t sign_grade, size_t exec_grade);
-	Form(Form const & original);
+	AForm(std::string_view name, size_t sign_grade, size_t exec_grade);
+	AForm(AForm const & original);
 
-	virtual ~Form();
+	virtual ~AForm();
 
-	Form& operator=(Form const & original);
+	AForm& operator=(AForm const & original);
 
-	void	beSigned(Bureaucrat const & bureaucrat);
+	void			beSigned(Bureaucrat const & signer);
+	virtual void	execute(Bureaucrat const & executor) = 0;
 
 	std::string const &	getName() const;
 	bool				isSigned() const;
@@ -37,7 +38,7 @@ class Form
 	};
 
 	private:
-	Form();
+	AForm();
 
 	std::string	const	_name;
 	bool				_signed;
@@ -45,6 +46,6 @@ class Form
 	size_t const		_exec_grade;
 };
 
-std::ostream&	operator<<(std::ostream& os, Form const & form);
+std::ostream&	operator<<(std::ostream& os, AForm const & form);
 
 #endif

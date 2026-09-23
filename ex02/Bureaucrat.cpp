@@ -1,5 +1,5 @@
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 #include <iostream>
 
 Bureaucrat::Bureaucrat(std::string_view name, size_t grade): _name(name), _grade(grade)
@@ -39,13 +39,13 @@ void	Bureaucrat::decGrade()
 	_grade++;
 }
 
-void	Bureaucrat::signForm(Form & form) const
+void	Bureaucrat::signForm(AForm & form) const
 {
 	try
 	{
 		form.beSigned(*this);
 	}
-	catch (Form::GradeTooLowException const & e)
+	catch (AForm::GradeTooLowException const & e)
 	{
 		std::cout << this->_name << " couldn't sign " << form.getName() << " because of the following reason: " <<  e.what() << std::endl;
 		return;

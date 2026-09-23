@@ -1,7 +1,7 @@
-#include "Form.hpp"
+#include "AForm.hpp"
 #include <iostream>
 
-Form::Form(std::string_view name, size_t sign_grade, size_t exec_grade): _name(name), _sign_grade(sign_grade), _exec_grade(exec_grade)
+AForm::AForm(std::string_view name, size_t sign_grade, size_t exec_grade): _name(name), _sign_grade(sign_grade), _exec_grade(exec_grade)
 {
 	if (sign_grade < 1 || exec_grade < 1)
 		throw GradeTooHighException();
@@ -10,13 +10,13 @@ Form::Form(std::string_view name, size_t sign_grade, size_t exec_grade): _name(n
 	_signed = false;
 }
 
-Form::Form(Form const & original): _name(original._name), _signed(original._signed), _sign_grade(original._sign_grade), _exec_grade(original._exec_grade)
+AForm::AForm(AForm const & original): _name(original._name), _signed(original._signed), _sign_grade(original._sign_grade), _exec_grade(original._exec_grade)
 {}
 
-Form::~Form()
+AForm::~AForm()
 {}
 
-Form& Form::operator=(Form const & original)
+AForm& AForm::operator=(AForm const & original)
 {
 	if (this == &original)
 		return *this;
@@ -27,43 +27,43 @@ Form& Form::operator=(Form const & original)
 	return *this;
 }
 
-void	Form::beSigned(Bureaucrat const & bureaucrat)
+void	AForm::beSigned(Bureaucrat const & signer)
 {
-	if (_sign_grade < bureaucrat.getGrade())
+	if (_sign_grade < signer.getGrade())
 		throw GradeTooLowException();
 	_signed = true;
 }
 
-std::string	const &	Form::getName() const
+std::string	const &	AForm::getName() const
 {
 	return _name;
 }
 
-bool				Form::isSigned() const
+bool				AForm::isSigned() const
 {
 	return _signed;
 }
 
 
-size_t				Form::getSignGrade() const
+size_t				AForm::getSignGrade() const
 {
 	return _sign_grade;
 }
 
 
-size_t				Form::getExecGrade() const
+size_t				AForm::getExecGrade() const
 {
 	return _exec_grade;
 }
 
 /*		Protected		*/
 
-Form::Form(): _name("Useless Form"), _sign_grade(150), _exec_grade(150)
+AForm::AForm(): _name("Useless Form"), _sign_grade(150), _exec_grade(150)
 {}
 
 //////////////////////////////////////
 
-std::ostream&	operator<<(std::ostream& os, Form const & form)
+std::ostream&	operator<<(std::ostream& os, AForm const & form)
 {
 	os << form.getName() << ": ";
 	if (form.isSigned() == false)

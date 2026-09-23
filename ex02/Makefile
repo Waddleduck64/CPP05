@@ -1,7 +1,7 @@
 NAME := bureaucracy
 CXX := c++
 CFLAGS := -Wall -Wextra -Werror -std=c++20 $(if $(DEBUG), -g) $(if $(FSAN), -fsanitize=address -fsanitize=leak)
-SRCS := main.cpp Bureaucrat.cpp Form.cpp
+SRCS := main.cpp Bureaucrat.cpp AForm.cpp
 ODIR := obj
 OBJS := $(SRCS:%.cpp=$(ODIR)/%.o)
 DEPS := $(OBJS:.o=.d)
