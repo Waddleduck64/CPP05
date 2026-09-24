@@ -56,7 +56,7 @@ size_t				Form::getExecGrade() const
 	return _exec_grade;
 }
 
-/*		Protected		*/
+/*		Private		*/
 
 Form::Form(): _name("Useless Form"), _sign_grade(150), _exec_grade(150)
 {}
