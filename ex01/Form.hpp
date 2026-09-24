@@ -39,7 +39,7 @@ class Form
 	private:
 	Form();
 
-	std::string	const	_name;
+	std::string const	_name;
 	bool				_signed;
 	size_t const		_sign_grade;
 	size_t const		_exec_grade;
