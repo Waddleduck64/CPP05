@@ -37,6 +37,15 @@ class AForm
 			GradeTooLowException() : std::runtime_error("This grade is too low.") {}
 	};
 
+	class FormNotSignedException : public std::runtime_error
+	{
+		public:
+			FormNotSignedException() : std::runtime_error("This form has not been signed yet.") {}
+	};
+
+	protected:
+	void	executionCheck(Bureaucrat const & executor) const;
+
 	private:
 	AForm();
 

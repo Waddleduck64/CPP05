@@ -56,6 +56,16 @@ size_t				AForm::getExecGrade() const
 	return _exec_grade;
 }
 
+/*		Protected		*/
+
+void	AForm::executionCheck(Bureaucrat const & executor) const
+{
+	if (_signed == false)
+		throw FormNotSignedException();
+	if (_exec_grade < executor.getGrade())
+		throw GradeTooLowException();
+}
+
 /*		Private		*/
 
 AForm::AForm(): _name("Useless Form"), _sign_grade(150), _exec_grade(150)
