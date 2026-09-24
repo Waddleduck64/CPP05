@@ -2,7 +2,7 @@
 # define SHRUBBERYCREATIONFORM_HPP
 
 # include "AForm.hpp"
-#include <string>
+# include <string>
 # include <string_view>
 
 class ShrubberyCreationForm: public AForm
@@ -15,7 +15,7 @@ class ShrubberyCreationForm: public AForm
 
 	ShrubberyCreationForm&	operator=(ShrubberyCreationForm const & original);
 
-	void	execute(Bureaucrat const & executor);
+	void	execute(Bureaucrat const & executor) const;
 
 	private:
 	ShrubberyCreationForm();
