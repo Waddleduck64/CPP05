@@ -1,4 +1,5 @@
 #include "Bureaucrat.hpp"
+#include "ShrubberyCreationForm.hpp"
 #include "AForm.hpp"
 #include <iostream>
 
@@ -6,12 +7,16 @@ int	main()
 {
 	Bureaucrat	big_chungus("Big Chungus", 1);
 	Bureaucrat	medium_chungus("Medium Chungus", 10);
-	AForm		spellcheck("Automated Spellchecker-checker update 42.69", 1, 150);
+	// AForm		spellcheck("Automated Spellchecker-checker update 42.69", 1, 150);
+	ShrubberyCreationForm	shrub("local");
 
-	std::cout << big_chungus << '\n' << medium_chungus << '\n' << spellcheck << std::endl;
+	// std::cout << big_chungus << '\n' << medium_chungus << '\n' << spellcheck << std::endl;
 
-	medium_chungus.signForm(spellcheck);
-	std::cout << spellcheck << std::endl;
-	big_chungus.signForm(spellcheck);
-	std::cout << spellcheck << std::endl;
+	// medium_chungus.signForm(spellcheck);
+	// std::cout << spellcheck << std::endl;
+	// big_chungus.signForm(spellcheck);
+	// std::cout << spellcheck << std::endl;
+
+	big_chungus.signForm(shrub);
+	shrub.execute(big_chungus);
 }

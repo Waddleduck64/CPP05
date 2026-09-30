@@ -1,6 +1,6 @@
 #include "ShrubberyCreationForm.hpp"
 #include "AForm.hpp"
-// #include <iostream>
+#include <fstream>
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string_view target): AForm("ShrubberyCreationForm", 145, 137), _target(target)
 {}
@@ -24,6 +24,10 @@ void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
 	executionCheck(executor);
 	// and then you execute target_deeznuts
+	std::string filename = _target + "_shrubbery";
+	std::ofstream treefile(filename);
+	treefile << "Y Y Y Y" << std::endl;
+	treefile.close();
 }
 /*		Private		*/
 
