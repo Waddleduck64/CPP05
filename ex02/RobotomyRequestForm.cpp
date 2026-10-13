@@ -24,6 +24,7 @@ void	RobotomyRequestForm::execute(Bureaucrat const & executor) const
 	executionCheck(executor);
 	// perform execution
 }
+
 /*		Private		*/
 
 RobotomyRequestForm::RobotomyRequestForm(): AForm("RobotomyRequestForm", 72, 45), _target("default")

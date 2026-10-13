@@ -1,8 +1,7 @@
 #include "PresidentialPardonForm.hpp"
 #include "AForm.hpp"
-#include <fstream>
 
-PresidentialPardonForm::PresidentialPardonForm(std::string_view target): AForm("PresidentialPardonForm", 145, 137), _target(target)
+PresidentialPardonForm::PresidentialPardonForm(std::string_view target): AForm("PresidentialPardonForm", 25, 5), _target(target)
 {}
 
 PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const & original): AForm(original), _target(original._target)
@@ -23,21 +22,10 @@ PresidentialPardonForm& PresidentialPardonForm::operator=(PresidentialPardonForm
 void	PresidentialPardonForm::execute(Bureaucrat const & executor) const
 {
 	executionCheck(executor);
-	std::string filename = _target + "_shrubbery";
-	std::ofstream treefile(filename);
-	treefile <<
-	"       _-_               _-_               _-_               _-_               _-_               _-_" "\n"
-	"    /~~   ~~\\         /~~   ~~\\         /~~   ~~\\         /~~   ~~\\         /~~   ~~\\         /~~   ~~\\" "\n"
-	" /~~         ~~\\   /~~         ~~\\   /~~         ~~\\   /~~         ~~\\   /~~         ~~\\   /~~         ~~\\" "\n"
-	"{               } {               } {               } {               } {               } {               }" "\n"
-	" \\  _-     -_  /   \\  _-     -_  /   \\  _-     -_  /   \\  _-     -_  /   \\  _-     -_  /   \\  _-     -_  /" "\n"
-	"   ~  \\\\ //  ~       ~  \\\\ //  ~       ~  \\\\ //  ~       ~  \\\\ //  ~       ~  \\\\ //  ~       ~  \\\\ //  ~" "\n"
-	"_- -   | | _- _   _- -   | | _- _   _- -   | | _- _   _- -   | | _- _   _- -   | | _- _   _- -   | | _- _" "\n"
-	"  _ -  | |   -_     _ -  | |   -_     _ -  | |   -_     _ -  | |   -_     _ -  | |   -_     _ -  | |   -_" "\n"
-	"      // \\\\             // \\\\             // \\\\             // \\\\             // \\\\             // \\\\" << std::endl;
-	treefile.close();
+	// perform execution
 }
+
 /*		Private		*/
 
-PresidentialPardonForm::PresidentialPardonForm(): AForm("PresidentialPardonForm", 145, 137), _target("default")
+PresidentialPardonForm::PresidentialPardonForm(): AForm("PresidentialPardonForm", 25, 5), _target("default")
 {}

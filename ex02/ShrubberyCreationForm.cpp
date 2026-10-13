@@ -37,6 +37,7 @@ void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 	"      // \\\\             // \\\\             // \\\\             // \\\\             // \\\\             // \\\\" << std::endl;
 	treefile.close();
 }
+
 /*		Private		*/
 
 ShrubberyCreationForm::ShrubberyCreationForm(): AForm("ShrubberyCreationForm", 145, 137), _target("default")
