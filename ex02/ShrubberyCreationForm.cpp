@@ -23,10 +23,18 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(ShrubberyCreationForm co
 void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
 	executionCheck(executor);
-	// and then you execute target_deeznuts
 	std::string filename = _target + "_shrubbery";
 	std::ofstream treefile(filename);
-	treefile << "Y Y Y Y" << std::endl;
+	treefile <<
+	"       _-_               _-_               _-_               _-_               _-_               _-_" "\n"
+	"    /~~   ~~\\         /~~   ~~\\         /~~   ~~\\         /~~   ~~\\         /~~   ~~\\         /~~   ~~\\" "\n"
+	" /~~         ~~\\   /~~         ~~\\   /~~         ~~\\   /~~         ~~\\   /~~         ~~\\   /~~         ~~\\" "\n"
+	"{               } {               } {               } {               } {               } {               }" "\n"
+	" \\  _-     -_  /   \\  _-     -_  /   \\  _-     -_  /   \\  _-     -_  /   \\  _-     -_  /   \\  _-     -_  /" "\n"
+	"   ~  \\\\ //  ~       ~  \\\\ //  ~       ~  \\\\ //  ~       ~  \\\\ //  ~       ~  \\\\ //  ~       ~  \\\\ //  ~" "\n"
+	"_- -   | | _- _   _- -   | | _- _   _- -   | | _- _   _- -   | | _- _   _- -   | | _- _   _- -   | | _- _" "\n"
+	"  _ -  | |   -_     _ -  | |   -_     _ -  | |   -_     _ -  | |   -_     _ -  | |   -_     _ -  | |   -_" "\n"
+	"      // \\\\             // \\\\             // \\\\             // \\\\             // \\\\             // \\\\" << std::endl;
 	treefile.close();
 }
 /*		Private		*/
